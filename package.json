@@ -11,7 +11,7 @@
     "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm@6 install --force && npm@6 install --only=dev --no-shrinkwrap && npm@^ run build"
+    "heroku-postbuild": "cd client && npx -p npm@6 npm install --legacy-peer-deps && npx -p npm@6 install --only=dev --no-shrinkwrap && npx -p npm@6 run build"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
